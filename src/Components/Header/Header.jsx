@@ -6,7 +6,7 @@ import { Button, Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 
 const Header = () => {
   return (
-    <Container>
+    <Container className="mt-4">
       <div className="text-center">
         <img src={logo} alt="" srcset="" />
         <p>Journalism Without Fear or Favour</p>
@@ -35,7 +35,7 @@ const Header = () => {
             <Nav>
               <Nav.Link href="#deets">Profile</Nav.Link>
               <Nav.Link eventKey={2} href="#memes">
-              <Button variant="secondary">Secondary</Button>
+              <Button variant="secondary">Login</Button>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
