@@ -5,6 +5,7 @@ import Footer from "../Components/Footer/Footer";
 import { Col, Container, Row } from "react-bootstrap";
 import LeftNav from "../Components/LeftNav/LeftNav";
 import RightNav from "../Components/RightNav/RightNav";
+import NavigationBar from "./NavigationBar/NavigationBar";
 
 
 
@@ -12,6 +13,7 @@ const Main = () => {
   return (
     <div>
       <Header></Header>
+      <NavigationBar></NavigationBar>
       <Container>
       <Row>
         <Col lg={3}>
