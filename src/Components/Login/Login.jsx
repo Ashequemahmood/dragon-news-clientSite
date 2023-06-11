@@ -1,10 +1,15 @@
 import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
+    const from = location.state.from.pathname || '/category/0';
+    console.log(from)
 
     const handleSignIn = (e)=>{
         e.preventDefault();
@@ -16,6 +21,7 @@ const Login = () => {
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
+            navigate(from, {replace: true});
         })
         .then(error=>{
             console.log(error)
@@ -34,6 +40,7 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" name="password" placeholder="Password" required />
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Accept terms and conditions" />
         </Form.Group>
